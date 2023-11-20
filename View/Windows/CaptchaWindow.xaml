@@ -1,0 +1,39 @@
+﻿<Window x:Class="ConferenceOrganizatorTF.View.Windows.CaptchaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ConferenceOrganizatorTF.View.Windows"
+        mc:Ignorable="d"
+        Title="CAPTCHA" SizeToContent="Height" Width="350" 
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Name="CaptchaTbl"
+                   FontSize="60"
+                   Text="OWER"
+                   FontStyle="Italic"
+                   HorizontalAlignment="Center"/>
+        
+        <Image Source="/Resources/Images/noise.jpg" 
+               Stretch="Fill"
+               Opacity="0.75"/>
+
+        <TextBox Name="CaptchaInputTb"
+                 Grid.Row="2"
+                 HorizontalContentAlignment="Center"/>
+
+        <Button Name="CaptchaCheckBtn"
+                Grid.Row="4"
+                Content="Подтвердить"
+                Click="CaptchaCheckBtn_Click"/>
+
+    </Grid>
+</Window>

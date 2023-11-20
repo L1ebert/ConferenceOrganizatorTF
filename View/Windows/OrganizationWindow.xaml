@@ -1,0 +1,63 @@
+﻿<Window x:Class="ConferenceOrganizatorTF.View.Windows.OrganizationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ConferenceOrganizatorTF.View.Windows"
+        mc:Ignorable="d"
+        Title="Окно организатора" Height="600" Width="800"
+         WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image 
+               Margin="51,46,50,276"/>
+
+        <Button Name="ProfileBtn"
+                Content="Мой профиль" 
+                Height="105" 
+                Width="205"
+                VerticalAlignment="Bottom"
+                Margin="0 10"/>
+
+        <Grid Grid.Column="1"
+              HorizontalAlignment="Left">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+
+            <TextBlock 
+                       Height="42" 
+                       Margin="130,29,104,10">
+                <Run Text="Доброе утро/день/вечер!"/>
+                <LineBreak/>
+                <Run Text="Ms/Mrs Имя"/>
+            </TextBlock>
+
+            <Button Name="EventBtn"
+                Content="Мероприятия" 
+                    Height="145" 
+                    Width="300" 
+                    Grid.Row="1"/>
+
+            <Button Name="MemberBtn"
+                    Content="Участник" 
+                    Height="145" 
+                    Width="300"
+                    Grid.Row="2"/>
+
+            <Button Name="JuriBtn"
+                    Content="Жюри" 
+                    Height="145" 
+                    Width="300"
+                    Grid.Row="3"/>
+        </Grid>
+    </Grid>
+</Window>
