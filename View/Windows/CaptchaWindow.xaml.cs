@@ -20,14 +20,19 @@ namespace ConferenceOrganizatorTF.View.Windows
     /// </summary>
     public partial class CaptchaWindow : Window
     {
+        Captcha captcha = new Captcha();
         public CaptchaWindow()
         {
             InitializeComponent();
+            CaptchaTbl.Text = captcha.Generate();
         }
 
         private void CaptchaCheckBtn_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (captcha.Check(CaptchaInputTb, CaptchaTbl) == true)
+            {
+                DialogResult = true;
+            }
         }
     }
 }

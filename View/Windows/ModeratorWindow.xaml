@@ -5,8 +5,158 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConferenceOrganizatorTF.View.Windows"
         mc:Ignorable="d"
-        Title="ModeratorWindow" Height="450" Width="800">
+        Title="ModeratorWindow" Height="600" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Регистрация жюри/модератора" 
+                   Grid.ColumnSpan="2"
+                   FontSize="40"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Id Number"
+                       Grid.Row="1"/>
+            <TextBox Name="IdNumberTb"
+                     Grid.Row="1"
+                     HorizontalAlignment="Right"
+                     Width="260"
+                     Margin="0,5,5,5"
+                     Text="{Binding User.Id}"
+                     Background="LightGray"/>
+
+            <TextBlock Text="ФИО"
+                       Grid.Row="2"/>
+            <TextBox Name="FIOTb"
+                     Grid.Row="2"
+                     Margin="5"
+                     HorizontalAlignment="Right"
+                     Width="260"/>
+
+            <TextBlock Text="Пол"
+                       Grid.Row="3"/>
+            <ComboBox Name="GenderCmb"
+                      Grid.Row="3"
+                      Margin="5"
+                      HorizontalAlignment="Right"
+                      Width="260"
+                      SelectionChanged="GenderCmb_SelectionChanged"/>
+
+            <TextBlock Text="Роль"
+                       Grid.Row="4"/>
+
+            <ComboBox Name="RoleCmb"
+                      Grid.Row="4"
+                      Margin="5"
+                      HorizontalAlignment="Right"
+                       SelectionChanged="RoleCmb_SelectionChanged"
+                      Width="260"/>
+
+            <TextBlock Text="Email"
+                       Grid.Row="5"/>
+            <TextBox Name="EmailTb"
+                     Grid.Row="5"
+                     Margin="5"
+                     HorizontalAlignment="Right"
+                     Width="260"/>
+
+            <TextBlock Text="Телефон"
+                       Grid.Row="6"/>
+            <TextBox Name="NumberTb"
+                     Grid.Row="6"
+                     Margin="5"
+                     HorizontalAlignment="Right"
+                     Width="260"/>
+
+            <TextBlock Text="Направление"
+                       Grid.Row="7"/>
+            <TextBox Name="ActivityTb"
+                     Grid.Row="7"
+                     Margin="5"
+                     HorizontalAlignment="Right"
+                     Width="260"/>
+            <CheckBox Name="EventCb"
+                      Content="Прикрепить к мероприятию"
+                      Grid.Row="8"
+                      Margin="5"
+                      FontSize="15"
+                      HorizontalAlignment="Right"/>
+
+            <TextBlock Text="Мероприятие"
+                       Grid.Row="9"/>
+            <ComboBox Name="EventCmb"
+                      Grid.Row="9"
+                      Margin="5"
+                      HorizontalAlignment="Right"
+                       SelectionChanged="EventCmb_SelectionChanged"
+                      Width="260"/>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="350"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Image Name="ImageImg"
+                   Margin="145,46,50,276"/>
+
+            <TextBlock Text="Пароль"
+                       Grid.Row="1"/>
+            <PasswordBox Name="PasswordPb"
+                         Grid.Row="1"
+                         Margin="5"
+                         HorizontalAlignment="Right"
+                         Width="260"/>
+
+            <TextBlock Text="Повтор пароля"
+                       Grid.Row="2"/>
+            <PasswordBox Name="ReEnterPasswordPb"
+                         Grid.Row="2"
+                         Margin="5"
+                         HorizontalAlignment="Right"
+                         Width="260"/>
+
+            <CheckBox Name="VisiblePasswordCb"
+                      Grid.Row="3"
+                      Content="Видимый пароль"
+                      Margin="5"
+                      FontSize="18"
+                      HorizontalAlignment="Right"/>
+
+            <Button Name="OkBtn"
+                    Grid.Row="4"
+                    HorizontalAlignment="Center"
+                    Content="Ок" 
+                    Margin="181,0,127,0" 
+                    Width="88"
+                    Click="OkBtn_Click"/>
+
+            <Button Name="CancelBtn"
+                    Grid.Row="4"
+                    HorizontalAlignment="Right"
+                    Content="Отмена" Width="106"/>
+
+
+        </Grid>
     </Grid>
 </Window>

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ConferenceOrganizatorTF.ApplicationData
 {
@@ -15,6 +16,10 @@ namespace ConferenceOrganizatorTF.ApplicationData
         /// Если пользователь отсутвует, хранит значение null.
         /// </summary>
         public static User currentUser = new User();
+        /// <summary>
+        /// Фиксирует количество попыток входа в систему.
+        /// </summary>
+        static int incorrectInputCounts = 0;
 
         public static bool Check(int idNumber, string password)
         {
@@ -59,6 +64,20 @@ namespace ConferenceOrganizatorTF.ApplicationData
             else
             {
                 //Сообщение об ошибке
+                incorrectInputCounts++;
+
+                if(incorrectInputCounts > 3)
+                {
+                    //Блокирование системы.
+                    BlockApplication blockApplication = new BlockApplication();
+                    blockApplication.Start(Application.Current.MainWindow);
+                    incorrectInputCounts = 0;
+                }
+                else
+                {
+                    MessageBox.Show($"Неправильно идентификатор пользователя или пароль! Попытка:{incorrectInputCounts} из 3");
+                }
+
             }
 
             //Медот возварщает false. Пользователь не был найден.

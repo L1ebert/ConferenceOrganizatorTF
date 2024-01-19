@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7d2fd9eed892472f84acea7fa20d5cf3" Name="Diagram1">
+      <Diagram DiagramId="7d2fd9eed892472f84acea7fa20d5cf3" Name="Diagram1" ZoomLevel="74">
         <EntityTypeShape EntityType="Tolmachev.Nikolay.ConferenceModel.Activity" Width="1.5" PointX="8.25" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Tolmachev.Nikolay.ConferenceModel.ActivityJury" Width="1.5" PointX="8.25" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Tolmachev.Nikolay.ConferenceModel.City" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
